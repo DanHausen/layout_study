@@ -9,18 +9,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Container(
-            padding:
-                EdgeInsets.all(20), //Used to change container content position
-            margin: EdgeInsets.all(
-                50), //Used to change the position of the container itself
-            child: Text(
-                'Dan'), //A container as a single child widget can contain only one child
-            color: Colors.white,
-            height: 100.0,
-            width: 100.0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Container(color: Colors.red, height: double.infinity, width: 100),
+              Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(color: Colors.yellow, height: 100, width: 100),
+                    Container(color: Colors.green, height: 100, width: 100)
+                  ],
+                ),
+              ),
+              Container(color: Colors.blue, height: double.infinity, width: 100)
+            ],
           ),
         ),
       ),
